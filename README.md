@@ -1,7 +1,7 @@
 # RISC-V-PipelineCPU
 ## Description
 This project has implemented a **5-stage pipelined CPU** using Verilog. The data width is 32-bit, and the instruction set is based on the RISC-V instruction set architecture.
-There are a total of 37 instructions. After being synthesized using UMC's 0.18μm process technology, the operational frequency can reach up to 110MHz.
+There are total of 37 instructions. After being synthesized using UMC's 0.18μm process technology, the operational frequency can reach up to 110MHz.
 ## Architecture
 ![cpu](https://github.com/suchuankai/RISC-V-PipelineCPU/assets/69788052/09f3e90f-ea4b-45f5-bbf5-25aa84c3c45c)
 ## All Instruction
