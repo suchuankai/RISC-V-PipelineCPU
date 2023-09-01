@@ -166,7 +166,7 @@ always_ff @(posedge clk) begin
 				mem_w_from_ID  <= 1'b0;
 				reg_w_from_ID  <= 1'b0;
 				wb_sel_from_ID <= 1'b0;
-				alu_src2_from_ID <= 1'b0;  // ?
+				alu_src2_from_ID <= 1'b0; 
 			end
 			7'b0010111: begin  /* U-type(AUIPC) */
 				pc_src_from_ID <= 1'b1;
@@ -177,7 +177,7 @@ always_ff @(posedge clk) begin
 				wb_sel_from_ID <= 1'b1;
 				alu_src2_from_ID <= 1'b0;
 			end
-			7'b0110111: begin  /* U-type(LUI)   ?*/
+			7'b0110111: begin  /* U-type(LUI) */
 				pc_src_from_ID <= 1'b0;
 				rd_src_from_ID <= 1'b0;
 				mem_r_from_ID  <= 1'b0;
