@@ -53,12 +53,11 @@ SRAM_wrapper DM1(
     .OE(1'b1),
     .WEB(DM_write_en),  // -> from CPU
     .A(DM_addr),        // -> from CPU
-    .DI(data_to_DM),   // -> from CPU
+    .DI(data_to_DM),    // -> from CPU
 
     /*  Output  */
-    .DO(data_from_DM)     // -> to CPU
+    .DO(data_from_DM)   // -> to CPU
 );
-
 
 
 

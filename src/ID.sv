@@ -62,34 +62,33 @@ end
 /*---------- Control unit ----------*/
 
 /*
-
-pc_src_from_ID(寫回rd)
-1 : 往後傳的PC是PC+imm
-0 : 往後傳的PC是PC+4
+pc_src_from_ID
+1 : PC = PC+imm
+0 : PC = PC+4
 
 reg_w_from_ID
-1 : 要寫回register
-0 : 不寫回register
+1 : register write
+0 : register don't write
 
 wb_sel_from_ID
-1 : 寫回register的data從ALU來
-0 : 寫回register的data從data memory來
+1 : register data from ALU
+0 : register data from data memory
 
 rd_src_from_ID
-1 : rd寫回的值和PC有關
-0 : rd寫回的值和ALU輸出有關
+1 : rd value relate to PC
+0 : rd value relate to ALU output
 
 mem_r_from_ID
-1 : 有要讀 data memory
-0 : 沒有要讀 data memory
+1 : read data memory
+0 : don't read data memory
 
 mem_w_from_ID
-1 : 有要寫入 data memory
-0 : 沒有要寫入 data memory
+1 : write data to data memory
+0 : don't write data to data memory
 
 alu_src2_from_ID
-1 : alu source2的資料為imm
-0 : alu source2的資料為register file 
+1 : alu source2 value is imm
+0 : alu source2 value is register file 
 
 */
     

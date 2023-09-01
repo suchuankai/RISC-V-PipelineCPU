@@ -50,7 +50,6 @@ module EX(
 
 /*------- control unit -------*/
 
-assign mem_r_from_EX = mem_r_from_ID;
 assign mem_w_from_EX = mem_w_from_ID;
 
 always_ff @(posedge clk) begin
@@ -60,12 +59,12 @@ always_ff @(posedge clk) begin
 		wb_sel_from_EX <= 1'b0;
 	end
 	else begin
+		mem_r_from_EX <= mem_r_from_ID;
 		rd_src_from_EX <= rd_src_from_ID;
 		reg_w_from_EX <= reg_w_from_ID;
 		wb_sel_from_EX <= wb_sel_from_ID;
 	end
 end
-
 
 
 /*-------  Forward  -------*/
@@ -112,7 +111,6 @@ always_comb begin
       br_cond_tmp = 1'b0;
   endcase
 end
-
 
 
 always_comb begin
@@ -187,12 +185,14 @@ always_comb begin
 	else branch_ctrl = 2'b00;
 end
 
+
 /*------- others -------*/
+
 assign rs2_data_from_EX = rs2_temp;
 assign func3_from_EX = func3_from_ID;
+
 always_ff @(posedge clk) begin
 	if(rst) begin
-
 		rd_addr_from_EX <= 5'd0;
 	end
 	else begin

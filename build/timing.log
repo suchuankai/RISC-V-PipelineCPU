@@ -6,14 +6,14 @@ Report : timing
         -max_paths 1
 Design : top
 Version: Q-2019.12
-Date   : Thu Aug 31 23:53:02 2023
+Date   : Fri Sep  1 10:15:02 2023
 ****************************************
 
 Operating Conditions: WCCOM   Library: fsa0m_a_generic_core_ss1p62v125c
 Wire Load Model Mode: enclosed
 
   Startpoint: IM1/i_SRAM (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: CPU/ID/rs1_data_reg_20_
+  Endpoint: CPU/ID/rs1_data_reg_23_
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -28,37 +28,38 @@ Wire Load Model Mode: enclosed
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              1.00       1.00
   IM1/i_SRAM/CK (SRAM)                     0.00       1.00 r
-  IM1/i_SRAM/DO17 (SRAM)                   5.72       6.72 r
-  IM1/DO[17] (SRAM_wrapper_1)              0.00       6.72 r
-  CPU/IM_data_in[17] (CPU)                 0.00       6.72 r
-  CPU/ID/IM_data_in[17] (ID)               0.00       6.72 r
-  CPU/ID/U1179/O (MAOI1HT)                 0.13       6.86 f
-  CPU/ID/U175/O (BUF8CK)                   0.21       7.07 f
-  CPU/ID/U1507/O (AN2T)                    0.22       7.29 f
-  CPU/ID/U1506/O (AN2T)                    0.25       7.54 f
-  CPU/ID/U1032/O (BUF12CK)                 0.23       7.77 f
-  CPU/ID/U1190/O (MAOI1)                   0.23       8.01 r
-  CPU/ID/U1012/O (ND3P)                    0.13       8.14 f
-  CPU/ID/U4217/O (MAOI1H)                  0.18       8.32 r
-  CPU/ID/U3643/O (ND2P)                    0.06       8.38 f
-  CPU/ID/U3475/O (OR3B2)                   0.22       8.60 f
-  CPU/ID/U3463/O (OR3B2)                   0.27       8.87 f
-  CPU/ID/U4173/O (ND2P)                    0.12       8.99 r
-  CPU/ID/U4131/O (ND2P)                    0.07       9.06 f
-  CPU/ID/rs1_data_reg_20_/D (DFFP)         0.00       9.06 f
-  data arrival time                                   9.06
+  IM1/i_SRAM/DO16 (SRAM)                   5.74       6.74 r
+  IM1/DO[16] (SRAM_wrapper_1)              0.00       6.74 r
+  CPU/IM_data_in[16] (CPU)                 0.00       6.74 r
+  CPU/ID/IM_data_in[16] (ID)               0.00       6.74 r
+  CPU/ID/U944/O (INV12CK)                  0.09       6.82 f
+  CPU/ID/U1735/O (MOAI1HT)                 0.16       6.98 r
+  CPU/ID/U212/O (INV4)                     0.06       7.04 f
+  CPU/ID/U1681/O (OR3B2)                   0.27       7.31 f
+  CPU/ID/U3738/O (INV3)                    0.16       7.47 r
+  CPU/ID/U1630/O (BUF12CK)                 0.25       7.72 r
+  CPU/ID/U683/O (ND2P)                     0.17       7.89 f
+  CPU/ID/U710/O (INV12)                    0.22       8.11 r
+  CPU/ID/U3659/O (AO22P)                   0.26       8.36 r
+  CPU/ID/U72/O (NR2P)                      0.10       8.47 f
+  CPU/ID/U1642/O (ND3P)                    0.09       8.56 r
+  CPU/ID/U1761/O (OR3B2)                   0.22       8.78 r
+  CPU/ID/U1213/O (ND2P)                    0.08       8.86 f
+  CPU/ID/U1202/O (ND2P)                    0.09       8.94 r
+  CPU/ID/rs1_data_reg_23_/D (QDFFRBT)      0.00       8.94 r
+  data arrival time                                   8.94
 
   clock clk (rise edge)                    8.00       8.00
   clock network delay (ideal)              1.00       9.00
   clock uncertainty                       -0.10       8.90
-  CPU/ID/rs1_data_reg_20_/CK (DFFP)        0.00       8.90 r
-  library setup time                      -0.08       8.82
-  data required time                                  8.82
+  CPU/ID/rs1_data_reg_23_/CK (QDFFRBT)     0.00       8.90 r
+  library setup time                      -0.16       8.74
+  data required time                                  8.74
   -----------------------------------------------------------
-  data required time                                  8.82
-  data arrival time                                  -9.06
+  data required time                                  8.74
+  data arrival time                                  -8.94
   -----------------------------------------------------------
-  slack (VIOLATED)                                   -0.25
+  slack (VIOLATED)                                   -0.20
 
 
 1

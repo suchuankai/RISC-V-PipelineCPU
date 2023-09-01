@@ -63,7 +63,6 @@ logic [31:0] rs2_data_from_EX;
 logic [4:0] rd_addr_from_EX;
 
 
-
 /* Stage MEM wire */
 logic reg_w_from_MEM;
 logic wb_sel_from_MEM;
@@ -72,18 +71,11 @@ logic [31:0] rd_from_pc;
 logic [31:0] rd_from_mem;
 
 
-
-/* Stage WB wire */
-
-
-
 /* forward and hazard wire */
 logic [1:0] hazard_ctrl;
 logic [1:0] hazard_reg;
 logic [1:0] rs1_sel_forward;
 logic [1:0] rs2_sel_forward;
-
-
 
 
 
@@ -101,8 +93,6 @@ IF IF(
 	.instr_addr(IM_addr),              
 	.IM_data_buf(IM_data_buf)
 );
-
-
 
 
 /* Stage ID */
@@ -173,9 +163,9 @@ EX EX(
 	/* Branch */
 	.opcode_from_ID(opcode_from_ID),
 	.func3_from_ID(func3_from_ID),
-	.branch_ctrl(branch_ctrl),         // For pc select control
+	.branch_ctrl(branch_ctrl),             // For pc select control
 	.pc_from_EX(pc_from_EX),
-	.pc_branch_from_EX(pc_branch_from_EX),  // For pc select
+	.pc_branch_from_EX(pc_branch_from_EX), // For pc select
 
 	/* ALU */
 	.alu_ctrl(alu_ctrl),
@@ -253,7 +243,6 @@ WB WB(
 	.wr_back_addr(rd_addr_wb),
 	.reg_w_from_wb(reg_w_wb)
 );
-
 
 
 Forward_Hazard Forward_Hazard(

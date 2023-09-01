@@ -16,9 +16,6 @@ module Forward_Hazard(
 
 
 /* Forward */
-// Forward 部分從 ID ALU MEM 比較可以降低 critical path 過長的風險、 但需使用sequential circuit
-
-
 always_ff @(posedge clk)begin
 	if(rst) begin
 		rs1_sel_forward <= 0;
@@ -51,8 +48,6 @@ end
 
 
 /* Hazard (stall and flush) */
-
-
 always_comb begin
 	if(rst) begin
 		hazard_ctrl = 2'd0;

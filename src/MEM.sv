@@ -57,16 +57,14 @@ end
 assign DM_addr = alu_res_comb[15:2];
 
 // Load from data memory -> just only submit address, no enable signal
-
-logic mem_r_from_EX_reg;
 logic [2:0] func3_from_EX_reg;
+
 always_ff @(posedge clk) begin
-	mem_r_from_EX_reg <= mem_r_from_EX;
 	func3_from_EX_reg <= func3_from_EX;
 end
 
 always_ff @(posedge clk) begin
-	if(mem_r_from_EX_reg) begin
+	if(mem_r_from_EX) begin
 		case(func3_from_EX_reg)
 			3'b000: begin /* LB */
 				rd_from_mem = {{24{data_from_mem[7]}}, data_from_mem[7:0]};
@@ -95,7 +93,6 @@ end
 
 // Write to data memory
 // Note : SRAM use word address, so it needs to handle byte shift condition here
-
 
 always_comb begin
 	if(mem_w_from_EX) begin
@@ -153,7 +150,7 @@ always_comb begin
 end
 
 always_comb begin
-	forward_from_MEM = (mem_r_from_EX_reg)? rd_from_mem : rd_from_pc_comb;
+	forward_from_MEM = (mem_r_from_EX)? rd_from_mem : rd_from_pc_comb;
 end
 
 

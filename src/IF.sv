@@ -5,8 +5,8 @@ module IF(
 	input [31:0] pc_jump, pc_branch_taken, // jump & branch address
 	input [31:0] IM_data_in,               // Instruction temp (for waiting use)
 
-	output logic [31:0] pc_from_IF,              // PC reg
-	output logic [13:0] instr_addr,              // address to IM
+	output logic [31:0] pc_from_IF,        // PC reg
+	output logic [13:0] instr_addr,        // address to IM
 	output logic [31:0] IM_data_buf
 );
 
@@ -26,7 +26,7 @@ always_ff @(posedge clk) begin
 		pc_from_IF <= 32'd0;
 	end
 	else begin
-		if(hazard_ctrl == 2'd2)begin  // PC needs to stall one cycle (Load use hazard)
+		if(hazard_ctrl == 2'd2)begin     // PC needs to stall one cycle (Load use hazard)
 			pc <= pc;
 			pc_from_IF <= pc_from_IF;
 		end
